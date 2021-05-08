@@ -1,19 +1,18 @@
-@import url("https://fonts.googleapis.com/css?family=Nunito:300,400,800,900&display=swap");
-$textFont: "Nunito", sans-serif;
-$textHeadings: "Nunito", serif;
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,900|Slabo+27px");
+$textFont: "Slabo 27px", serif;
+$textHeadings: "Raleway", sans-serif;
 $fontSize: 16px;
 
-$orange: #e24e2a;
-$brown: #383838; /* rgb(56, 56, 56) */
-$green: #538d6a;
-$gray: #ececec;
-$text: #555555;
-$white: #fff;
+$plava: #3496d8;
+$tamnoSiva: #8f8f8f;
+$bela: #fff;
 
 $transition: 0.4s ease;
-$boxShadow: 0 5px 10px 0px rgba($brown, 0.5);
+$boxShadow: 0 5px 10px 0px rgba($plava, 0.5);
 
-$py: 70px 0;
+.py {
+    padding: 50px 0;
+}
 
 // RESET STYLE
 * {
@@ -51,6 +50,7 @@ a {
 }
 img {
     display: block;
+    width: 100%;
 }
 .container {
     width: 80%;

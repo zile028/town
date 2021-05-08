@@ -1,0 +1,21 @@
+@import "starter";
+@import "mixins";
+/*------- GLOBAL -------*/
+
+/*------- header -------*/
+header {
+    height: 100vh;
+    background-image: url(../img/header.jpg);
+    @include bgBasic;
+    nav {
+        .logo {
+            font-size: 1.6rem;
+        }
+    }
+}
+/*------- GLOBAL -------*/
+/*------- GLOBAL -------*/
+/*------- GLOBAL -------*/
+/*------- GLOBAL -------*/
+/*------- GLOBAL -------*/
+/*------- GLOBAL -------*/

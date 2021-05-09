@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Raleway:400,900|Slabo+27px");
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,900|Slabo+27px");
 $textFont: "Slabo 27px", serif;
 $textHeadings: "Raleway", sans-serif;
 $fontSize: 16px;
@@ -8,7 +8,8 @@ $tamnoSiva: #8f8f8f;
 $bela: #fff;
 
 $transition: 0.4s ease;
-$boxShadow: 0 5px 10px 0px rgba($plava, 0.5);
+$boxShadow: 0 0px 10px 0px rgba($tamnoSiva, 0.8);
+$textShadow: 0 0 1px black;
 
 .py {
     padding: 50px 0;
@@ -29,6 +30,7 @@ body {
     font-family: $textFont;
     font-size: $fontSize;
     line-height: 1.6;
+    color: $tamnoSiva;
 }
 
 h1,
@@ -53,9 +55,9 @@ img {
     width: 100%;
 }
 .container {
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
-    @media (max-width: 769px) {
+    @media (max-width: 767px) {
         width: 90%;
     }
 }

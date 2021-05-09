@@ -1,21 +1,256 @@
 @import "starter";
 @import "mixins";
 /*------- GLOBAL -------*/
+h2 {
+    font-weight: 300;
+    font-size: 3rem;
+    color: $plava;
+}
 
+button {
+    color: $bela;
+    font-size: 1.1rem;
+    font-weight: 400;
+    padding: 1em 5em;
+    background-color: $plava;
+    border: none;
+    border-radius: 2em;
+    cursor: pointer;
+    transition: $transition;
+    &:hover {
+        background-color: $tamnoSiva;
+    }
+}
 /*------- header -------*/
 header {
-    height: 100vh;
+    @include flex(flex-start, center, column);
     background-image: url(../img/header.jpg);
     @include bgBasic;
+    height: 100vh;
+    color: $bela;
+    text-shadow: $textShadow;
     nav {
+        @include flex(space-between, center);
+        padding: 20px 3%;
+        width: 100%;
+        @media (max-width: 767px) {
+            flex-direction: column;
+        }
         .logo {
-            font-size: 1.6rem;
+            font-size: 2rem;
+            font-weight: 300;
+        }
+        ul {
+            @include flex(space-between, center);
+            @media (max-width: 767px) {
+                width: 100%;
+            }
+            li {
+                text-transform: uppercase;
+                margin-left: 60px;
+                font-size: 1.1rem;
+                letter-spacing: 2px;
+
+                &:hover {
+                    color: $plava;
+                }
+                @media (max-width: 767px) {
+                    margin-left: 0px;
+                }
+            }
+        }
+    }
+    div {
+        @include flex(center, center, column);
+        flex: 1;
+        h2,
+        h4,
+        h6 {
+            font-weight: 300;
+            text-shadow: $textShadow;
+            color: $bela;
+        }
+
+        h2 {
+            font-size: 5rem;
+        }
+        h4 {
+            font-size: 2rem;
+        }
+        h6 {
+            font-size: 1.1rem;
+            letter-spacing: 1px;
         }
     }
 }
-/*------- GLOBAL -------*/
-/*------- GLOBAL -------*/
-/*------- GLOBAL -------*/
-/*------- GLOBAL -------*/
+
+/*------- intro -------*/
+.intro {
+    @include flex(space-between, center);
+    article {
+        flex: 0 0 48%;
+        @media (max-width: 767px) {
+            flex: 0 0 100%;
+        }
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+/*------- services -------*/
+.services {
+    @include flex(space-between, center);
+    article {
+        flex: 0 0 31%;
+        text-align: center;
+        &:last-child {
+            margin-bottom: 0;
+        }
+        @media (max-width: 767px) {
+            flex: 0 0 100%;
+            margin-bottom: 20px;
+        }
+        i {
+            color: $plava;
+            font-size: 4rem;
+            @media (max-width: 767px) {
+                float: left;
+                margin: 0 10px 5px 0;
+            }
+        }
+        h4 {
+            color: $plava;
+            font-size: 1.5rem;
+            font-weight: 300;
+            padding: 1em 0;
+            @media (max-width: 767px) {
+                padding: 0 0 1.5em;
+            }
+        }
+        p {
+            text-align: justify;
+            font-size: 0.9rem;
+        }
+    }
+}
+
+/*------- works -------*/
+.works {
+    text-align: center;
+    p {
+        font-size: 1.2rem;
+    }
+    article {
+        @include flex(space-between, center);
+        margin-top: 50px;
+        & > div {
+            flex: 0 0 31%;
+            height: 600px;
+            margin-bottom: 60px;
+            border-bottom: 10px solid $plava;
+            position: relative;
+            cursor: pointer;
+            transition: $transition;
+            overflow: hidden;
+            @media (max-width: 767px) {
+                flex: 0 0 100%;
+                height: 400px;
+            }
+            &:hover {
+                box-shadow: $boxShadow;
+                img {
+                    transform: scale(110%);
+                }
+            }
+            img {
+                height: 100%;
+                object-fit: cover;
+                transition: $transition;
+            }
+            h5 {
+                position: absolute;
+                top: 0;
+                right: 0;
+                background-color: $plava;
+                padding: 10px 20px;
+                color: $bela;
+                font-weight: 300;
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
+/*------- footer -------*/
+footer {
+    background: url(../img/footer.jpg);
+    @include bgBasic(center, cover);
+    color: $bela;
+    @media (max-width: 767px) {
+        background: linear-gradient(rgba(black, 0.3), rgba(black, 0.3)), url(../img/footer.jpg);
+    }
+    h2 {
+        color: $bela;
+        border-bottom: 1px solid $bela;
+        margin-bottom: 30px;
+        font-size: 4rem;
+        &::after {
+            content: "";
+            position: relative;
+            display: block;
+            background-color: $bela;
+            height: 10px;
+            width: 5em;
+            bottom: -10px;
+        }
+    }
+    p {
+        font-size: 1.3rem;
+        text-shadow: $textShadow;
+    }
+    .wrapper {
+        @include flex(space-between, center);
+        div {
+            flex: 0 0 50%;
+            padding: 50px;
+            @media (max-width: 767px) {
+                flex: 0 0 100%;
+                padding: 30px;
+            }
+            p {
+                font-size: 2rem;
+            }
+            i {
+                margin-right: 5px;
+            }
+            form {
+                @include flex(flex-start, center);
+                input,
+                button {
+                    padding: 0.5em 1em;
+                    border-radius: 0;
+                    border: none;
+                    outline: none;
+                    font-size: 1.2rem;
+                }
+                input {
+                    @media (max-width: 767px) {
+                        flex: 1;
+                    }
+                }
+                button {
+                    text-transform: uppercase;
+                    position: relative;
+                    padding: 0.5em 1.3em;
+                    @media (max-width: 767px) {
+                        flex: 1 0 100px;
+                    }
+                }
+            }
+        }
+    }
+}
 /*------- GLOBAL -------*/
 /*------- GLOBAL -------*/
